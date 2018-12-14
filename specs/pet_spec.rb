@@ -40,6 +40,11 @@ class TestPet < Minitest::Test
   end
 
 
+  def test_get_owner_id__available()
+    assert_nil(@pet_1.owner_id, nil)
+  end
+  
+
 
 
 
