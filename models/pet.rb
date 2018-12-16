@@ -11,7 +11,7 @@ class Pet
     @age = options['age']
     @type = options['type']
     @ready = options['ready']
-    @owner_id = options['owner_id'].to_i  if options['id']
+    @owner_id = options['owner_id'].to_i  if options['owner_id']
   end
 
   def save()
@@ -53,5 +53,12 @@ class Pet
       results = SqlRunner.run( sql, values )
       return Pets.new( results.first )
     end
+
+    def self.destroy(id)
+      sql = "DELETE FROM pets
+      WHERE id = $1"
+      values = [id]
+      SqlRunner.run( sql, values )
+   end
 
 end

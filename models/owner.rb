@@ -50,5 +50,11 @@ class Owner
       return Owner.new( results.first )
     end
 
+   def self.destroy(id)
+     sql = "DELETE FROM owners
+     WHERE id = $1"
+     values = [id]
+     SqlRunner.run( sql, values )
+  end
 
 end
