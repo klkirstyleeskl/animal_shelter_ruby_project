@@ -1,16 +1,11 @@
 <h1>pets</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th>Type</th>
-  </tr>
-  <% for pet in @pets %>
-  <tr>
-    <td><a href="/pets/<%= pet.id %>"><%= pet.name %></a></td>
-    <td><a href="/pets/<%= pet.age %>"><%= pet.type %></a></td>
-    <td><a href="/pets/<%= pet.ready %>"><%= pet.owner_id %></a></td>
-  </tr>
-  <% end %>
-</table>
+<% @pets.each do |pet| %>
+  <p>Name:<%=pet.name()%></p>
+  <p>Age:<%=pet.age()%></p>
+  <p>Type:<%=pet.type()%></p>
+  <p>Ready:<%=pet.ready()%></p>
+  <p>Owner:<%=pet.owner.pretty_name()%></p>
+  <p> <a href="/pets/<%=pet.id%>"> more info </a> </p>
+  <hr>
+<% end %>

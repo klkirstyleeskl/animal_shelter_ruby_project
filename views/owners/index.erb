@@ -1,0 +1,9 @@
+<h1>Owners</h1>
+
+<% @owners.each do |owner| %>
+  <p>First Name:<%=owner.first_name()%></p>
+  <p>Last Name:<%=owner.last_name()%></p>
+  <p>Telephone Number:<%=owner.telephone_number()%></p>
+  <p> <a href="/owners/<%=owner.id%>"> more info</a> </p>
+  <hr>
+<% end %>

@@ -14,6 +14,14 @@ class Pet
     @owner_id = options['owner_id'].to_i  if options['owner_id']
   end
 
+  def owner()
+    sql = "SELECT * FROM owners WHERE id = $1"
+    values = [@owner_id]
+    result = SqlRunner.run(sql, values)
+    id = result.first['id']
+    @owner_id = id
+  end
+
   def save()
     sql = "INSERT INTO pets
     (
@@ -43,15 +51,15 @@ class Pet
     def self.all()
       sql = "SELECT * FROM pets"
       results = SqlRunner.run( sql )
-      return results.map { |hash| Pets.new( hash ) }
+      return results.map { |hash| Pet.new( hash ) }
     end
 
-    def self.find( id )
+   def self.find( id )
       sql = "SELECT * FROM pets
       WHERE id = $1"
       values = [id]
       results = SqlRunner.run( sql, values )
-      return Pets.new( results.first )
+      return Pet.new( results.first )
     end
 
     def self.destroy(id)

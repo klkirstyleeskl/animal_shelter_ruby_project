@@ -12,13 +12,13 @@ class TestPet < Minitest::Test
       'type' => 'cat',
       'ready' => 'yes',
       'owner_id' => nil})
-#Ask on monday about this one (foreign key), undefined when testing
+      
     @pet_2 = Pet.new({
         'name' => 'zero',
         'age' => 1,
         'type' => 'dog',
         'ready' => 'no'})
-    # 'owner_id' => owner_1.id})
+       'owner_id' => owner_1.id})
 
     @pet_3 = Pet.new({
           'name' => 'medusa',
@@ -40,10 +40,6 @@ class TestPet < Minitest::Test
   end
 
 
-  def test_get_owner_id__available()
-    assert_nil(@pet_1.owner_id, nil)
-  end
-  
 
 
 
