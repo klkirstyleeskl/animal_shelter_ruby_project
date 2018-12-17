@@ -1,0 +1,50 @@
+<form method="post" action="/pets/<%= @pet.id %>">
+
+  <label for="name-field">Name:</label>
+  <input
+  type="text"
+  name="name"
+  id="name-field"
+  value="<%= @pet.name %>"
+  />
+
+  <label for="age-field">Age:</label>
+  <input
+  type="number"
+  name="age"
+  id="age-field"
+  value="<%= @pet.age %>"
+  />
+
+  <label for="type">Type:</label>
+  <input
+  type="text"
+  name="type"
+  id="type-field"
+  value="<%= @pet.type %>"
+  />
+
+  <label for="owner">Owner</label>
+  <select name="owner_id" id="owner_select"
+   selected="<%= @pet.owner_id %>">
+   <% @owners.each do |owner| %>
+    <% if owner.id == @pet.owner_id %>
+    <option value=<%owner.id %> selected><%= owner.pretty_name %></option>
+    <% else %>
+      <option value=<%= owner.id %>> <%= owner.pretty_name %></option>
+      <% end %>
+    <% end %>
+  </select>
+
+
+  <label for="ready">Ready?:</label>
+  <select name="ready" id="ready">
+      <option value="1"
+      <%= "selected"%>>yes</option>
+      <option value="2"
+      <%= "selected"%>>no</option>
+      value="<% @pet.ready %>"
+  </select>
+
+  <input type='submit' value="Edit Pet">
+</form>

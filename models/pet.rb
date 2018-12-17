@@ -1,4 +1,7 @@
 require_relative('../db/sql_runner')
+require_relative('owner')
+require('pry')
+
 
 class Pet
 
@@ -15,11 +18,11 @@ class Pet
   end
 
   def owner()
+    return Owner.new({}) if !@owner_id
     sql = "SELECT * FROM owners WHERE id = $1"
     values = [@owner_id]
     result = SqlRunner.run(sql, values)
-    id = result.first['id']
-    @owner_id = id
+    return Owner.new(result.first)
   end
 
   def save()
@@ -42,17 +45,35 @@ class Pet
         @id = id
       end
 
-    def self.delete_all()
+      def update()
+        sql = "UPDATE pets
+        SET
+        (
+          name,
+          age,
+          type,
+          ready,
+          owner_id
+          ) =
+          (
+          $1, $2, $3, $4, $5
+        )
+        WHERE id = $6"
+        values = [@name, @age, @type, @ready, @owner_id, @id]
+        SqlRunner.run(sql, values)
+      end
+
+   def self.delete_all()
       sql = "DELETE FROM pets"
       values = []
       SqlRunner.run(sql, values)
-    end
+   end
 
-    def self.all()
+   def self.all()
       sql = "SELECT * FROM pets"
       results = SqlRunner.run( sql )
       return results.map { |hash| Pet.new( hash ) }
-    end
+   end
 
    def self.find( id )
       sql = "SELECT * FROM pets
@@ -62,10 +83,10 @@ class Pet
       return Pet.new( results.first )
     end
 
-    def self.destroy(id)
+    def delete()
       sql = "DELETE FROM pets
       WHERE id = $1"
-      values = [id]
+      values = [@id]
       SqlRunner.run( sql, values )
    end
 

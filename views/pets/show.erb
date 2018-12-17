@@ -1,6 +1,11 @@
 <h1>pet</h1>
-<p>Name: <%= @pets.name.capitalize %></p>
-<p>Age: <%= @pets.age %></p>
-<p>Type: <%= @pets.type.capitalize %></p>
-<p>Ready?: <%=@pets.ready.capitalize%></p>
-<p>Owner?: <%=@pets.owner_id%></p>
+<p>Name: <%= @pet.name.capitalize %></p>
+<p>Age: <%= @pet.age %></p>
+<p>Type: <%= @pet.type.capitalize %></p>
+<p>Ready?: <%=@pet.ready.capitalize%></p>
+<p>Owner?: <%=@pet.owner.pretty_name%></p>
+
+<a href="/pets/<%= @pet.id %>/edit">Edit</a>
+<form action="/pets/<%= @pet.id %>/delete"
+  method="POST"><input type="submit"
+  value="Delete"></form>

@@ -14,14 +14,30 @@ get '/pets/new' do
 end
 
 get '/pets/:id' do
-  @pets = Pet.find(params['id'].to_i)
+  @pet = Pet.find(params['id'].to_i)
   erb( :"pets/show" )
 end
 
+post '/pets' do # create
+  @pet = Pet.new( params )
+  @pet.save()
+  erb(:"pets/create" )
+end
 
+get '/pets/:id/edit' do
+  @owners = Owner.all()
+  @pet = Pet.find(params['id'])
+  erb(:"pets/edit")
+end
 
-# post'/pets/' do
-#   @new_pet = Pet.new(params)
-#   @new_pet.save()
-#   erb(:create)
-# end
+post '/pets/:id' do
+  pet = Pet.new(params)
+  pet.update
+  redirect to "/pets/#{params['id']}"
+end
+
+post '/pets/:id/delete' do
+  pet = Pet.find( params[:id])
+  pet.delete
+  redirect to '/pets'
+end

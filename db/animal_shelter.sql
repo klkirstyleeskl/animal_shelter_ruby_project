@@ -14,6 +14,6 @@ CREATE TABLE pets (
   name VARCHAR(255) not null,
   age INT2 not null,
   type VARCHAR(255) not null,
-  ready VARCHAR(255) not null,
+  ready BOOLEAN,
   owner_id INT8 references owners(id)
 );

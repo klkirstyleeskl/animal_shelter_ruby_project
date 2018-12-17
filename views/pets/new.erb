@@ -1,1 +1,22 @@
 <h1>this will create a new pet for adoption</h1>
+
+<form method="post" action ="/pets">
+
+<label for="name">Name:</label>
+<input id="name" type="text" name="name" >
+
+<label for="age">Age:</label>
+<input id="age" type="number" name="age" >
+
+<label for="type">Type:</label>
+<input id="type" type="text" name="type">
+
+<label for="ready">Ready?:</label>
+<select name="ready" id="ready">
+    <option value="1"
+    <%= "selected"%>>yes</option>
+    <option value="2"
+    <%= "selected"%>>no</option>
+</select>
+<input type="submit" value="New Pet">
+</form>
