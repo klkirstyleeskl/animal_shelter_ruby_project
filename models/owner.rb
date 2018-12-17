@@ -34,6 +34,22 @@ def save()
       @id = id
     end
 
+    def update()
+      sql = "UPDATE owners
+      SET
+      (
+        first_name,
+        last_name,
+        telephone_number
+        ) =
+        (
+        $1, $2, $3
+      )
+      WHERE id = $4"
+      values = [@first_name, @last_name, @telephone_number, @id]
+      SqlRunner.run(sql, values)
+    end
+
     def self.delete_all()
       sql = "DELETE FROM owners"
       values = []
@@ -54,11 +70,11 @@ def save()
       return Owner.new( results.first )
     end
 
-   def self.destroy(id)
-     sql = "DELETE FROM owners
-     WHERE id = $1"
-     values = [id]
-     SqlRunner.run( sql, values )
-  end
+    def delete()
+      sql = "DELETE FROM owners
+      WHERE id = $1"
+      values = [@id]
+      SqlRunner.run( sql, values )
+   end
 
 end
