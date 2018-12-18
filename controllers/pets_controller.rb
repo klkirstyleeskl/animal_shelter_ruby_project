@@ -21,7 +21,7 @@ end
 post '/pets' do # create
   @pet = Pet.new( params )
   @pet.save()
-  erb(:"pets/create" )
+  redirect to '/pets'
 end
 
 get '/pets/:id/edit' do
@@ -33,7 +33,7 @@ end
 post '/pets/:id' do
   pet = Pet.new(params)
   pet.update
-  redirect to "/pets/#{params['id']}"
+  redirect to "/pets"
 end
 
 post '/pets/:id/delete' do
