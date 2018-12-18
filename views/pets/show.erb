@@ -3,7 +3,7 @@
 <p>Age: <%= @pet.age %></p>
 <p>Type: <%= @pet.type.capitalize %></p>
 <p>Ready?: <%=@pet.ready.capitalize%></p>
-<p>Owner?: <%=@pet.owner.pretty_name%></p>
+<p>Owner: <%=@pet.owner.pretty_name%></p>
 
 <a href="/pets/<%= @pet.id %>/edit">Edit</a>
 <form action="/pets/<%= @pet.id %>/delete"

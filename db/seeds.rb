@@ -23,7 +23,9 @@ pet_1 = Pet.new({
   'age' => 2,
   'type' => 'cat',
   'ready' => 'yes',
-  'owner_id' => nil})
+  'owner_id' => nil
+  })
+
 pet_1.save
 
 pet_2 = Pet.new({
@@ -31,7 +33,9 @@ pet_2 = Pet.new({
     'age' => 1,
     'type' => 'dog',
     'ready' => 'no',
-    'owner_id' => owner_1.id})
+    'owner_id' => owner_1.id
+    })
+
 pet_2.save
 
 pet_3 = Pet.new({

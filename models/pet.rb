@@ -5,7 +5,7 @@ require('pry')
 
 class Pet
 
-  attr_accessor :name, :age, :type, :ready, :owner_id
+  attr_accessor :name, :age, :type, :ready, :owner_id, :image
   attr_reader :id
 
   def initialize(options)
@@ -15,6 +15,7 @@ class Pet
     @type = options['type']
     @ready = options['ready']
     @owner_id = options['owner_id'].to_i  if options['owner_id']
+    @image = options['image']
   end
 
   def owner()

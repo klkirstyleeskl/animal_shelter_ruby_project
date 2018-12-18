@@ -1,7 +1,9 @@
 <h1>Owner</h1>
 <p>First Name: <%= @owner.first_name.capitalize %></p>
 <p>Last Name: <%= @owner.last_name.capitalize %></p>
+<p>Pets: <%= @owner.pet.each %></p>
 <p>Telephone Number: <%= @owner.telephone_number %></p>
+
 
 <a href="/owners/<%= @owner.id %>/edit">Edit</a>
 <form action="/owners/<%= @owner.id %>/delete"

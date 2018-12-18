@@ -16,4 +16,5 @@ CREATE TABLE pets (
   type VARCHAR(255) not null,
   ready VARCHAR(255) not null,
   owner_id INT8 references owners(id)
+  image TEXT
 );

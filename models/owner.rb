@@ -12,6 +12,15 @@ class Owner
     @telephone_number = options['telephone_number'].to_i
  end
 
+ def pet()
+   sql = "SELECT * FROM pets
+          WHERE owner_id = $1"
+   values = [@id]
+   results = SqlRunner.run(sql, values)
+   return results.map { |hash| Pet.new( hash )}
+   return Pet.new({}) if result == nil
+ end
+
  def pretty_name()
    return "#{@first_name} #{@last_name}"
  end
