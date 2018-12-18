@@ -1,3 +1,11 @@
+<form class="form-style-1" method="post" action="/owners/<%= @owner.id %>">
+
+<label for="field1"
+<span>First Name => </span><input type="text" name="field1" required="true"
+value="<%= @owner.first_name %>"/>
+</label>
+
+
 <form method="post" action="/pets/<%= @pet.id %>">
 
   <label for="name-field">Name:</label>
@@ -39,9 +47,9 @@
 
   <label for="ready">Ready?:</label>
   <select name="ready" id="ready">
-      <option value="1"
+      <option value="yes"
       <%= "selected"%>>yes</option>
-      <option value="2"
+      <option value="no"
       <%= "selected"%>>no</option>
       value="<% @pet.ready %>"
   </select>

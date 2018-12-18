@@ -1,14 +1,17 @@
 <h1>This will create a new owner</h1>
 
-  <form method="post" action ="/owners">
+<form class="form-style-1" action="owners" method="post">
+<label for="field1">
+<span>First Name</span><input type="text" name="field1" required="true" />
+</label>
 
-  <label for="first-name">First Name:</label>
-  <input id="first-name" type="text" name="first_name" >
+<label for="field2">
+<span>Last Name</span><input type="text" name="field2" required="true" />
+</label>
 
-  <label for="last-name">Last Name:</label>
-  <input id="last-name" type="text" name="last_name" >
+<label for="field3">
+<span>Telephone</span><input type="text" name="field3" required="true" />
+</label>
 
-  <label for="telephone-number">Telephone:</label>
-  <input id="telephone-number" type="text" name="telephone_number">
-  <input type="submit" value="New Owner">
+<span> </span><input type="submit" value="New Owner" />
 </form>

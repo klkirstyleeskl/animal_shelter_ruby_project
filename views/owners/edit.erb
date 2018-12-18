@@ -1,28 +1,20 @@
-<form method="post" action="/owners/<%= @owner.id %>">
+  <form class="form-style-1" method="post" action="/owners/<%= @owner.id %>">
 
-  <label for=" first-name-field">First Name:</label>
-  <input
-  type="text"
-  name="first_name"
-  id="first-name-field"
-  value="<%= @owner.first_name %>"
-  />
+  <label for="field1"
+  <span>First Name => </span><input type="text" name="field1" required="true"
+  value="<%= @owner.first_name %>"/>
+  </label>
 
-  <label for=" last-name-field">Last Name:</label>
-  <input
-  type="text"
-  name="last_name"
-  id="last-name-field"
-  value="<%= @owner.last_name %>"
-  />
 
-  <label for="telephone-number">Telephone Number:</label>
-  <input
-  type="text"
-  name="telephone_number"
-  id="telephone-number-field"
-  value="<%= @owner.telephone_number %>"
-  />
+  <label for="field2"
+  <span>Last Name => </span><input type="text" name="field2" required="true"
+  value="<%= @owner.last_name %>"/>
+  </label>
 
-<input type='submit' value="Edit owner">
-</form>
+  <label for="field3"
+  <span>Telephone => </span><input type="text" name="field3" required="true"
+  value="<%= @owner.telephone_number %>"/>
+  </label>
+
+  <input type='submit' value="Edit owner">
+  </form>

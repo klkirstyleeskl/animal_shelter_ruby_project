@@ -1,22 +1,26 @@
 <h1>this will create a new pet for adoption</h1>
 
-<form method="post" action ="/pets">
+<form class="form-style-1" action="pets" method="post">
+<label for="field1">
+<span>Name</span><input type="text" name="field1" required="true" />
+</label>
 
-<label for="name">Name:</label>
-<input id="name" type="text" name="name" >
+<label for="field2">
+<span>Age</span><input type="text" name="field2" required="true" />
+</label>
 
-<label for="age">Age:</label>
-<input id="age" type="number" name="age" >
+<label for="field3">
+<span>type</span><input type="text" name="field3" required="true" />
+</label>
 
-<label for="type">Type:</label>
-<input id="type" type="text" name="type">
-
-<label for="ready">Ready?:</label>
+<label for="field4">
+<span>Ready?
 <select name="ready" id="ready">
     <option value="yes"
     <%= "selected"%>>yes</option>
     <option value="no"
     <%= "selected"%>>no</option>
 </select>
-<input type="submit" value="New Pet">
+</label>
+<span> </span><input type="submit" value="New Pet" />
 </form>
