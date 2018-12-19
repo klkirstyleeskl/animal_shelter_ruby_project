@@ -34,7 +34,8 @@ pet_2 = Pet.new({
     'age' => 1,
     'type' => 'dog',
     'ready' => 'no',
-    'owner_id' => owner_1.id
+    'owner_id' => owner_1.id,
+    'image' =>'/images/dog.png'
     })
 
 pet_2.save
