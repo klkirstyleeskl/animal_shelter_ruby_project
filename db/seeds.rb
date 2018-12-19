@@ -44,7 +44,9 @@ pet_3 = Pet.new({
       'age' => 10,
       'type' => 'snake',
       'ready' => 'yes',
-      'owner_id' => nil})
+      'owner_id' => nil,
+      'image' =>'/images/snake.png'
+      })
 pet_3.save
 
 pet_4 = Pet.new({
