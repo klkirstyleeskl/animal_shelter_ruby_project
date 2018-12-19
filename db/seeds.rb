@@ -24,7 +24,7 @@ pet_1 = Pet.new({
   'type' => 'cat',
   'ready' => 'yes',
   'owner_id' => nil,
-  'image' => '/images/cat.jpg'
+  'image' => '/images/cat_actual.jpg'
   })
 
 pet_1.save
