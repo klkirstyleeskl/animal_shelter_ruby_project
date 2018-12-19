@@ -8,14 +8,15 @@ body {
 }
 
  h2 {
-  font-size: 3.0em;
+  font-size: 2.0em;
   font-family: 'Special Elite', cursive;
-  margin: 100px;
+  margin: 0px;
   padding: 100px;
 }
 
 
 h1 {
+  font-family: 'Special Elite', cursive;
   text-align: center;
   font-size: 5.0em;
   color: black;
