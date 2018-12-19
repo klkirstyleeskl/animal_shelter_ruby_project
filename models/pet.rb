@@ -33,14 +33,15 @@ class Pet
       age,
       type,
       ready,
-      owner_id
+      owner_id,
+      image
       )
       VALUES
       (
-        $1, $2, $3, $4, $5
+        $1, $2, $3, $4, $5, $6
       )
         RETURNING id"
-        values = [@name, @age, @type, @ready, @owner_id]
+        values = [@name, @age, @type, @ready, @owner_id, @image]
         result = SqlRunner.run(sql, values)
         id = result.first['id']
         @id = id
@@ -54,13 +55,14 @@ class Pet
           age,
           type,
           ready,
-          owner_id
+          owner_id,
+          image
           ) =
           (
-          $1, $2, $3, $4, $5
+          $1, $2, $3, $4, $5, $6
         )
-        WHERE id = $6"
-        values = [@name, @age, @type, @ready, @owner_id, @id]
+        WHERE id = $7"
+        values = [@name, @age, @type, @ready, @owner_id, @image, @id]
         SqlRunner.run(sql, values)
       end
 

@@ -23,7 +23,8 @@ pet_1 = Pet.new({
   'age' => 2,
   'type' => 'cat',
   'ready' => 'yes',
-  'owner_id' => nil
+  'owner_id' => nil,
+  'image' => '/images/cat.jpg'
   })
 
 pet_1.save
@@ -54,5 +55,5 @@ pet_4 = Pet.new({
       'owner_id' => nil})
 pet_4.save
 
-binding.pry
+# binding.pry
 nil

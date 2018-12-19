@@ -15,6 +15,6 @@ CREATE TABLE pets (
   age INT2 not null,
   type VARCHAR(255) not null,
   ready VARCHAR(255) not null,
-  owner_id INT8 references owners(id)
+  owner_id INT8 references owners(id),
   image TEXT
 );
