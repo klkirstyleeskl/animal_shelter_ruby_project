@@ -1,7 +1,8 @@
 <h1>Owner</h1>
 <p>First Name: <%= @owner.first_name.capitalize %></p>
 <p>Last Name: <%= @owner.last_name.capitalize %></p>
-<p>Pets: <%= @owner.each.name %></p>
+<% @owner.pet.each do |pet| %>
+<p>Pets: <%=pet.name%></p> <%end%>
 <p>Telephone Number: <%= @owner.telephone_number %></p>
 
 
