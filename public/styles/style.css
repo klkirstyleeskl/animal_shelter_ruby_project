@@ -1,5 +1,6 @@
 body {
-  background-color: #9684A1;
+  background: url('/images/Untitled.jpg');
+  background-color: transparent;
   background-size: cover;
   color: black;
   font-size: 20px;
@@ -10,23 +11,27 @@ body {
 img {
   border-radius: 25px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  opacity: 0.5;
+  margin-top: 100px;
+  margin-bottom: 500px;
+  margin-left:  100px;
+  margin-right: 100px;
+  width: 90%;
 }
 
-p {
+p {border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
   color: #000000;
   font-size: 30px;
   font-family: 'Times', cursive;
 }
 
-.btn {
-  border:0px none;
-  border-radius: 3%;
-  padding: 8px 12px;
-  color: papayawhip;
-  cursor:pointer;
-  font-family: 'Special Elite', cursive;
+a { border-radius: 25px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  color: #CED3DC;
+  font-size: 50px;
+  font-family: 'Times', cursive;
 }

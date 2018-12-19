@@ -7,7 +7,8 @@ body {
   margin: 0px;
 }
 
-h1, h2, h3, h4, h5, h6 {
+ h2 {
+  font-size: 3.0em;
   font-family: 'Special Elite', cursive;
   margin: 100px;
   padding: 100px;
